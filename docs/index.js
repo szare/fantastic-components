@@ -1,14 +1,14 @@
-/* eslint-disable global-require, import/no-unresolved, react/no-multi-comp */
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'purecss/build/pure.css';
-import './main.css';
-import '../style.css';
+import React from "react";
+import ReactDOM from "react-dom";
 import App from './App';
+import {ThemeProvider} from 'styled-components';
+import ThemeRtl from '../src/commons/Themes/ThemeRtl';
+import ThemeLtr from '../src/commons/Themes/ThemeLtr';
+import 'font-awesome/css/font-awesome.css'
 
+let mountNode = document.getElementById("app");
 ReactDOM.render(
-  <div>
+  <ThemeProvider theme={ThemeLtr}>
     <App/>
-  </div>,
-  document.getElementById('catalog')
-);
+  </ThemeProvider>
+  , mountNode);
